@@ -9,7 +9,7 @@
     "@shopify/polaris": "^4.1.0",
     "create-react-app": "^3.0.1",
     "gh-pages": "^2.1.1",
-    "homepage": "https://jbcastro.github.io/localdata/",
+    "homepage": "https://jbcastro.github.io/local_data/",
     "material-table": "^1.50.0",
     "material-ui-icons": "^1.0.0-beta.36",
     "pascalcase": "^1.0.0",
