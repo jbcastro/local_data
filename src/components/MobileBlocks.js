@@ -91,7 +91,7 @@ const MobileBlocks = ({ data, onSelect }) => {
   const grape = "grape";
   const description = "description";
   const vinyard = "vinyard";
-
+  const color = "color";
   const mise = "mise";
 
   const upperCaseFirstLetter = str =>
@@ -158,6 +158,13 @@ const MobileBlocks = ({ data, onSelect }) => {
         avatar={
           <Avatar aria-label="recipe" className={colorz(data.color)}>
             {upperCaseFirstLetterForColor(data.color)}
+            <ButtonBase
+              value={data.color}
+              id={color}
+              onClick={event => onSelect(event)}
+            >
+              {data.color}
+            </ButtonBase>
           </Avatar>
         }
         title={data.name}
@@ -198,7 +205,7 @@ const MobileBlocks = ({ data, onSelect }) => {
             id={place}
             onClick={event => onSelect(event)}
           >
-            {upperCaseFirstLetter(data.place)}
+            {data.place}
           </ButtonBase>{" "}
           <ButtonBase
             className={classes.ButtonBase}
