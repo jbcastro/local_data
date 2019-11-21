@@ -228,6 +228,8 @@ class App extends Component {
         return filterNulls(result.mise) === value;
       } else if (id === "color") {
         return filterNulls(result.color) === value;
+      } else if (id === "coravin") {
+        return result.coravin === true;
       } else {
         return (
           filterNulls(result.description1) === value ||

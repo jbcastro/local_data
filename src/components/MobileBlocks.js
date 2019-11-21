@@ -25,19 +25,33 @@ const useStyles = makeStyles(theme => ({
     display: "none"
   },
   card: {
-    maxWidth: 345
+    maxWidth: 345,
+    display: "inline-block",
+    minHeight: 345,
+    overflow: "hidden"
   },
   cardAdded: {
     maxWidth: 345,
-    backgroundColor: "#E6E6FA"
+    backgroundColor: "#E6E6FA",
+    display: "inline-block",
+    minHeight: 345,
+    overflow: "hidden"
   },
   cardRemoved: {
     maxWidth: 345,
-    backgroundColor: "#FFA07A"
+    backgroundColor: "#FFA07A",
+    display: "inline-block",
+    minHeight: 345,
+    overflow: "hidden",
+    display: "none"
   },
   cardHidden: {
     maxWidth: 345,
-    backgroundColor: "yellow"
+    backgroundColor: "yellow",
+    display: "inline-block",
+    minHeight: 345,
+    overflow: "hidden",
+    display: "none"
   },
   ButtonBase: {
     color: "blue"
@@ -93,6 +107,7 @@ const MobileBlocks = ({ data, onSelect }) => {
   const vinyard = "vinyard";
   const color = "color";
   const mise = "mise";
+  const coravin = "coravin";
 
   const upperCaseFirstLetter = str =>
     str.replace(/\b[a-z]/g, char => char.toUpperCase());
@@ -144,6 +159,13 @@ const MobileBlocks = ({ data, onSelect }) => {
       </ButtonBase>
     );
   }
+  function coravinCheck(coravin) {
+    if (coravin === true) {
+      return "coravin";
+    } else {
+      return "non-coravin";
+    }
+  }
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -180,7 +202,14 @@ const MobileBlocks = ({ data, onSelect }) => {
 
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          A{" "}
+          A {""}
+          <ButtonBase
+            className={classes.ButtonBase}
+            id={coravin}
+            onClick={event => onSelect(event)}
+          >
+            {coravinCheck(data.coravin)}
+          </ButtonBase>{" "}
           <ButtonBase
             className={classes.ButtonBase}
             value={data.year}
@@ -414,7 +443,7 @@ const MobileBlocks = ({ data, onSelect }) => {
               {data.appellation}
             </ButtonBase>
           </Typography>
-          <Typography paragraph>fun fact: {data.funfact}</Typography>
+          <Typography paragraph>Fun Fact: {data.funfact}</Typography>
         </CardContent>
       </Collapse>
     </Card>

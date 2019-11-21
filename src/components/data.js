@@ -572,7 +572,7 @@ const dataClasses = [
     price: 14,
     mise: "AP",
     lastUpdated: "2019-11-19T22:40:23.005Z",
-    color: "white",
+    color: "sparkling",
     status: "added",
     picture: "clavin"
   },
@@ -613,7 +613,7 @@ const dataClasses = [
     grape4: null,
     place: null,
     price: null,
-    year: null
+    year: "NV"
   },
   {
     _id: "5dd4701ca479c80e1cccb306",
@@ -1330,7 +1330,7 @@ const dataClasses = [
     mise: "AP",
     price: 18,
     color: "red",
-    status: "removed",
+    status: "added",
     description1: "Black Cherries",
     description2: "Currants",
     description3: "Red Plum",
@@ -2644,7 +2644,7 @@ const dataClasses = [
     timestamp: "2019-11-19T22:52:48.809Z",
     mise: "AP",
     lastUpdated: "2019-11-19T22:52:50.355Z",
-    color: "red",
+    color: "white",
     status: "added",
     picture: "quintessence",
     coravin: false,
