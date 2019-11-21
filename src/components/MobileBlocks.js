@@ -207,6 +207,7 @@ const MobileBlocks = ({ data, onSelect }) => {
             className={classes.ButtonBase}
             id={coravin}
             onClick={event => onSelect(event)}
+            value={data.coravin}
           >
             {coravinCheck(data.coravin)}
           </ButtonBase>{" "}
