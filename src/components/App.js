@@ -14,13 +14,15 @@ class App extends Component {
       glasses: dataClasses,
       filteredWines: {},
       allInfo: [],
-      unFilteredWines: dataClasses
+      unFilteredWines: dataClasses,
+      hideRemoved: false
     };
 
     this.onSelect = this.onSelect.bind(this);
     this.onClear = this.onClear.bind(this);
     this.onSort = this.onSort.bind(this);
     this.onSearchSelect = this.onSearchSelect.bind(this);
+    this.hideRemoved = this.hideRemoved.bind(this);
   }
 
   componentDidMount() {
@@ -324,12 +326,23 @@ class App extends Component {
     this.setState({ glasses: unFilteredWines1 });
   }
   onSort() {
-    const glasses = this.state.glasses;
-    const steve = glasses.sort(
-      (a, b) => new Date(a.lastUpdated) - new Date(b.lastUpdated)
-    );
-    this.setState({ glasses: steve });
+    const glasses = this.state.unFilteredWines;
+    const sorted = glasses.sort(function(a, b) {
+      var colorA = a.color.toUpperCase();
+      var colorB = b.color.toUpperCase();
+      if (colorA < colorB) {
+        return -1;
+      }
+      if (colorA > colorB) {
+        return 1;
+      }
+      return 0;
+    });
+    this.setState({ glasses: sorted });
   }
+  hideRemoved = event => {
+    this.setState(state => ({ hideRemoved: !this.state.hideRemoved }));
+  };
 
   ///render portion
 
@@ -357,6 +370,7 @@ class App extends Component {
             unFilteredWines={this.state.unFilteredWines}
             onSearchSelect={this.onSearchSelect}
             allInfo={this.state.allInfo}
+            hideRemoved={this.hideRemoved}
           />
 
           <MobileBlocksData
@@ -366,6 +380,7 @@ class App extends Component {
             onClear={this.onClear}
             curItem={this.state.curItem}
             mappedGlasses={this.state.mappedGlasses}
+            hideRemoved={this.state.hideRemoved}
           />
         </div>
       );

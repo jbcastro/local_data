@@ -42,9 +42,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#FFA07A",
     display: "inline-block",
     minHeight: 345,
-    overflow: "hidden",
-    display: "none"
+    overflow: "hidden"
   },
+
   cardHidden: {
     maxWidth: 345,
     backgroundColor: "yellow",
@@ -92,7 +92,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const MobileBlocks = ({ data, onSelect }) => {
+const MobileBlocks = ({ data, onSelect, hideRemoved }) => {
   // butt = data;
   // const onSelect = props.onSelect;
 
@@ -121,8 +121,10 @@ const MobileBlocks = ({ data, onSelect }) => {
   const checkStatus = status => {
     if (status === "added") {
       return classes.cardAdded;
-    } else if (status === "removed") {
+    } else if (status === "removed" && !hideRemoved) {
       return classes.cardRemoved;
+    } else if (status === "removed" && hideRemoved) {
+      return classes.cardHidden;
     } else if (status === "hidden") {
       return classes.cardHidden;
     } else {
