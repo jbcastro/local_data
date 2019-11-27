@@ -27,21 +27,21 @@ const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
     display: "inline-block",
-    minHeight: 345,
+    minHeight: 436,
     overflow: "hidden"
   },
   cardAdded: {
     maxWidth: 345,
     backgroundColor: "#E6E6FA",
     display: "inline-block",
-    minHeight: 345,
+    minHeight: 436,
     overflow: "hidden"
   },
   cardRemoved: {
     maxWidth: 345,
     backgroundColor: "#FFA07A",
     display: "inline-block",
-    minHeight: 345,
+    minHeight: 436,
     overflow: "hidden"
   },
 
@@ -49,12 +49,15 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 345,
     backgroundColor: "yellow",
     display: "inline-block",
-    minHeight: 345,
+    minHeight: 436,
     overflow: "hidden",
     display: "none"
   },
   ButtonBase: {
     color: "blue"
+  },
+  AvatarButton: {
+    fontSize: "1em"
   },
   media: {
     height: 0,
@@ -63,6 +66,7 @@ const useStyles = makeStyles(theme => ({
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
+
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest
     })
@@ -181,13 +185,13 @@ const MobileBlocks = ({ data, onSelect, hideRemoved }) => {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={colorz(data.color)}>
-            {upperCaseFirstLetterForColor(data.color)}
             <ButtonBase
               value={data.color}
               id={color}
               onClick={event => onSelect(event)}
+              className={classes.AvatarButton}
             >
-              {data.color}
+              {upperCaseFirstLetterForColor(data.color)}
             </ButtonBase>
           </Avatar>
         }
