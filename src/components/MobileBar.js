@@ -53,7 +53,6 @@ const MobileBar = props => {
       <ReactSearchBox
         className={classes.searchBox}
         placeholder="Search"
-        value="Doe"
         data={props.allInfo}
         onSelect={event => onSearchSelect(event)}
       />

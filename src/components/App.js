@@ -7,6 +7,9 @@ import CircularDeterminate from "./CircularDeterminate";
 
 import dataClasses from "../components/data";
 
+//npm run build
+//npm run deploy
+
 class App extends Component {
   constructor(props) {
     super(props);
