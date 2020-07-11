@@ -33,38 +33,56 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 345,
     display: "inline-block",
-    // minHeight: 436,
+    minHeight: 300,
     overflow: "hidden",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 1,
+    },
   },
   cardAdded: {
     maxWidth: 345,
     backgroundColor: "#E6E6FA",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 1,
+    },
     display: "inline-block",
-    // minHeight: 436,
+    minHeight: 300,
     overflow: "hidden",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 1,
+    },
   },
   cardRemoved: {
     maxWidth: 345,
     backgroundColor: "#FFA07A",
     display: "inline-block",
-    // minHeight: 436,
+    minHeight: 300,
     overflow: "hidden",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 1,
+    },
   },
 
   cardHidden: {
     maxWidth: 345,
     backgroundColor: "yellow",
     display: "inline-block",
-    // minHeight: 436,
+    minHeight: 300,
     overflow: "hidden",
     display: "none",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 1,
+    },
   },
   cardUnHidden: {
     maxWidth: 345,
     backgroundColor: "yellow",
     display: "inline-block",
-    // minHeight: 436,
+    minHeight: 300,
     overflow: "hidden",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 1,
+    },
   },
   ButtonBase: {
     color: "blue",
